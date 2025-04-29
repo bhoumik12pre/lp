@@ -1,0 +1,45 @@
+🔹 How the Program Works:
+Key:
+
+DES uses a fixed 8-byte key.
+
+We randomly generate a secure 8-byte key using get_random_bytes(8).
+
+Padding:
+
+DES requires that the text length must be a multiple of 8 bytes.
+
+If it's not, we add spaces to the end of the text.
+
+Encryption:
+
+Use DES.new(key, DES.MODE_ECB) to create a DES cipher object.
+
+Encrypt the padded plaintext.
+
+Decryption:
+
+Decrypt the cipher text.
+
+Remove the extra spaces added during padding.
+
+🔹 Example Run:
+text
+Copy
+Edit
+Generated DES Key (8 bytes): b'\x83kF\x12\xa5\xd1\xe2\x7f'
+Enter the plain text to encrypt: Hello
+Encrypted text (in bytes): b'\xf4\x8d\xcc\xab\xd9\xe2\x94\x01'
+Decrypted text: Hello
+⭐ Important Points About DES:
+DES is a symmetric key algorithm (same key for encryption and decryption).
+
+Block cipher that encrypts 64 bits (8 bytes) of data at a time.
+
+It uses 16 rounds of complex operations internally.
+
+Key size is 56 bits (plus 8 bits for parity).
+
+DES is now considered insecure for many applications (due to short key size).
+
+Triple DES (3DES) and AES are used instead for stronger security.

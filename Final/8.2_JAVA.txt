@@ -1,0 +1,100 @@
+#Calculate the message digest of a text using the MD5 algorithm in JAVA.
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+public class MD5Example {
+    public static void main(String[] args) {
+        try {
+            // Sample input text
+            String text = "Hello, this is an MD5 hash example!";
+            
+            // Create MessageDigest instance for MD5
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            
+            // Calculate the hash
+            byte[] hashBytes = md.digest(text.getBytes());
+            
+            // Convert the byte array to a hexadecimal string
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hashBytes) {
+                hexString.append(String.format("%02x", b));
+            }
+            
+            // Output the message digest in hexadecimal form
+            System.out.println("Original text: " + text);
+            System.out.println("MD5 Message Digest: " + hexString.toString());
+        } catch (NoSuchAlgorithmException e) {
+            System.out.println("Error: MD5 algorithm not found.");
+        }
+    }
+}
+
+
+Original text: Hello, this is an MD5 hash example!
+MD5 Message Digest: 190e1ccf453f5e58b556c9435be9a05a
+
+
+Step 1: Install Java
+Ensure you have Java installed on your computer. You can download the latest version of Java from the official website:
+
+Java Downloads
+
+Step 2: Set up the Java Environment
+Once you have installed Java, make sure the JAVA_HOME environment variable is set and added to the PATH on your system. This allows you to run Java commands from the command line.
+
+For Windows:
+
+Go to Control Panel > System > Advanced system settings > Environment Variables.
+
+Under System Variables, click New and set JAVA_HOME to your Java installation path (e.g., C:\Program Files\Java\jdk-11.0.x).
+
+Add %JAVA_HOME%\bin to the Path variable.
+
+For macOS/Linux:
+
+Open a terminal and run:
+
+bash
+Copy code
+export JAVA_HOME=/path/to/your/java/jdk
+export PATH=$JAVA_HOME/bin:$PATH
+Step 3: Write the Java Program
+Open a text editor (such as Notepad, VSCode, or Sublime Text).
+
+Copy and paste the Java code for MD5 calculation into a new file.
+
+Save the file with a .java extension, for example, MD5Example.java.
+
+Step 4: Compile the Java Program
+Open a terminal (or Command Prompt on Windows).
+
+Navigate to the directory where your MD5Example.java file is saved. For example:
+
+bash
+Copy code
+cd path/to/your/directory
+Compile the Java file using the javac command:
+
+bash
+Copy code
+javac MD5Example.java
+This will generate a file called MD5Example.class in the same directory. This is the compiled bytecode.
+
+Step 5: Run the Java Program
+Once the file is compiled, run the program using the java command:
+
+bash
+Copy code
+java MD5Example
+The output will be displayed in the terminal, showing the MD5 message digest of the text.
+
+Example Output:
+kotlin
+Copy code
+Original text: Hello, this is an MD5 hash example!
+MD5 Message Digest: 190e1ccf453f5e58b556c9435be9a05a
+Troubleshooting Tips:
+If you encounter any errors related to Java not being recognized, make sure that you have properly set the JAVA_HOME and updated the PATH environment variable.
+
+If you get a compilation error, check for any typos or issues in the Java code.
